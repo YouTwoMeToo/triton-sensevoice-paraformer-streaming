@@ -1,5 +1,6 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
+# 对Triton部署的sensevoice模型进行压测
 
 import argparse
 import os
@@ -470,9 +471,13 @@ def main():
 
 
 if __name__ == "__main__":
-    """使用示例： python triton_stability_test_http_json.py \ --folder /path/to/wavs \ --url 
-    http://10.100.92.10/8-model-app-350-322-workspace \ --model sensevoice \ -n 32 \ --timeout 20 \ --stats-interval 
-    50 \ --window 1000 \ --csv result_detail.csv python triton_stability_test.py --folder 
-    /Users/youtwometoo/Downloads/myProject/test-audio/test --url http://10.100.92.10/8-model-app-350-322-workspace 
-    --model sensevoice -n 4 --csv result_detail.csv """
+    """使用示例： python triton_stability_test.py \ 
+                            --folder /path/to/wavs \ 
+                            --url http://127.0.0.1:8001 \ 
+                            --model sensevoice \ 
+                            -n 32 \ 
+                            --timeout 20 \ 
+                            --stats-interval 50 \ 
+                            --window 1000 \ 
+                            --csv result_detail.csv  """
     main()
